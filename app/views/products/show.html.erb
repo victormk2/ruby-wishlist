@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag 'welcome/welcome.css' %>
+
+<div class='container'>
+  <%= render @product %>
+
+    <div>
+      <%= image_tag(@product.image, :size => "350x350", :crop => :fill) if @product.image.attached? %>
+    </div>
+
+  <div>
+      <%= link_to "Edit this product", edit_product_path(@product) %> |
+      <%= link_to "Back to products", products_path %>
+    <div class='container'>
+      <%= button_to "Destroy this product", @product, method: :delete %>
+    </div>
+  </div>
+</div>
